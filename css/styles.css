@@ -1,0 +1,145 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+ul {
+	list-style: none;
+}
+
+.header {
+	position: sticky;
+	top: 0;
+	left: 0;
+	background: rgba(241, 241, 241, 1);
+	margin-bottom: 40px;
+}
+
+.header .container {
+	padding: 20px;
+}
+
+.header__list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.header__item {
+	border: 1px solid #000;
+	border-radius: 12px;
+	padding: 10px 20px;
+	cursor: pointer;
+	width: 10%;
+	text-align: center;
+}
+
+.header__item:hover {
+	display: block;
+	border: 1px solid transparent;
+	background: rgba(0, 0, 0, 0.7);
+	transition: 0.4s linear;
+}
+
+.header__item:hover a {
+	color: rgba(255, 255, 255, 0.7);
+	transition: 0.4s linear;
+}
+
+.header__item a {
+	display: block;
+	width: 100%;
+	line-height: 20px;
+	text-decoration: none;
+	color: #000;
+}
+
+.header__item:not(:last-child) {
+	margin-right: 10px;
+}
+
+.code__item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-bottom: 40px;
+	padding: 30px;
+	border: 1px solid #000;
+	border-radius: 12px;
+}
+
+.code__example {
+	margin-top: 20px;
+}
+
+.title {
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+.subtitle {
+	font-size: 24px;
+	line-height: 21px;
+	text-transform: uppercase;
+}
+
+textarea {
+	outline: none;
+	border: none;
+	overflow: auto;
+	resize: none;
+	height: 1px;
+	width: 1px;
+}
+
+.code__item--styles {
+	border: none;
+	padding: 0;
+}
+.code__item--styles .btn-clipboard,
+.code__item--styles .code__example {
+	margin: 0;
+}
+
+.code__example--columns td {
+	border: 1px solid #000;
+}
+
+.btn-clipboard {
+	background: black;
+	color: white;
+	border-radius: 12px;
+	padding: 10px 20px;
+	cursor: pointer;
+	border: none;
+	margin-top: 20px;
+	border: 1px solid transparent;
+	transition: 0.4s linear;
+	width: 120px;
+}
+
+.btn-clipboard:hover {
+	color: #000;
+	background: #fff;
+	border: 1px solid #000;
+}
+
+.active {
+	border: 1px solid transparent;
+	background: #000;
+}
+
+.active a {
+	color: #fff;
+}
