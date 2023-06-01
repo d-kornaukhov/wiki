@@ -5,7 +5,7 @@ window.addEventListener("load", function () {
 	// Создание навигации
 
 	components.map(component => {
-		if (component.title) {
+		if (component && component.title) {
 			const navItem = document.createElement("li")
 			const navLink = document.createElement("a")
 			navLink.textContent = component.title
