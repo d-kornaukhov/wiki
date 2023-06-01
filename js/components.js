@@ -1,8 +1,8 @@
 const components = [
 	// Стили
 	{
-		title: 'styles',
-		id: 'styles',
+		title: "styles",
+		id: "styles",
 		code: `	<style>
 		* {
 			padding: 0;
@@ -861,9 +861,9 @@ const components = [
 
 	// Таблицы
 	{
-		title: 'table columns',
-		subtitle: 'Table 2 columns',
-		id: 'table',
+		title: "columns",
+		subtitle: "Table 2 columns",
+		id: "columns",
 		code: `<table>
 		<tr>
 			<td class="w495">content</td>
@@ -873,8 +873,8 @@ const components = [
 	</table>`,
 	},
 	{
-		subtitle: 'Table 3 columns',
-		id: 'table',
+		subtitle: "Table 3 columns",
+		id: "columns",
 		code: `<table>
 		<tr>
 				<td class="w33">content</td>
@@ -886,8 +886,8 @@ const components = [
 </table>`,
 	},
 	{
-		subtitle: 'Table 4 columns',
-		id: 'table',
+		subtitle: "Table 4 columns",
+		id: "columns",
 		code: `<table>
 		<tr>
 				<td class="w245">content</td>
@@ -901,8 +901,8 @@ const components = [
 </table>`,
 	},
 	{
-		subtitle: 'Table 5 columns',
-		id: 'table',
+		subtitle: "Table 5 columns",
+		id: "columns",
 		code: `<table>
 		<tr>
 				<td class="w19">content</td>
@@ -918,8 +918,8 @@ const components = [
 </table>`,
 	},
 	{
-		subtitle: 'Table 6 columns',
-		id: 'table',
+		subtitle: "Table 6 columns",
+		id: "columns",
 		code: `<table>
 		<tr>
 				<td class="w15">content</td>
@@ -939,9 +939,9 @@ const components = [
 
 	// каты
 	{
-		title: 'cut',
-		subtitle: 'Cut H1',
-		id: 'cut',
+		title: "cut",
+		subtitle: "Cut H1",
+		id: "cut",
 		code: `
     <details class="w100 mt16">
         <summary class="wiki-cut__summary">
@@ -959,8 +959,8 @@ const components = [
     <div class="hr mt16"></div>`,
 	},
 	{
-		subtitle: 'Cut H2',
-		id: 'cut',
+		subtitle: "Cut H2",
+		id: "cut",
 		code: `
     <details class="w100 mt16">
         <summary class="wiki-cut__summary">
@@ -978,8 +978,8 @@ const components = [
     <div class="hr mt16"></div>`,
 	},
 	{
-		subtitle: 'Cut H3',
-		id: 'cut',
+		subtitle: "Cut H3",
+		id: "cut",
 		code: `
     <details class="w100 mt16">
         <summary class="wiki-cut__summary">
@@ -997,8 +997,8 @@ const components = [
     <div class="hr mt16"></div>`,
 	},
 	{
-		subtitle: 'Cut H4',
-		id: 'cut',
+		subtitle: "Cut H4",
+		id: "cut",
 		code: `
 		<details class="w100 mt16">
 		<summary class="wiki-cut__summary">
@@ -1016,8 +1016,8 @@ const components = [
 <div class="hr mt16"></div>`,
 	},
 	{
-		subtitle: 'Cut Paragraph',
-		id: 'cut',
+		subtitle: "Cut Paragraph",
+		id: "cut",
 		code: `    <details class="w100 mt16">
 		<summary class="wiki-cut__summary">
 				<p class="p1-bold fleft">Details</p>
@@ -1036,8 +1036,8 @@ const components = [
 
 	// Контакты
 	{
-		title: 'contacts',
-		id: 'contacts',
+		title: "contacts",
+		id: "contacts",
 		code: `<table>
     <tr>
         <td class="w33 pad12 radius12 bg-gray">
