@@ -2,25 +2,6 @@ window.addEventListener("load", function () {
 	const codeList = document.querySelector(".code__list")
 	const navList = document.querySelector(".header__list")
 
-	// Создание навигации
-
-	components.map(component => {
-		if (component && component.title) {
-			const navItem = document.createElement("li")
-			const navLink = document.createElement("a")
-			navLink.textContent = component.title
-			navItem.classList.add("header__item")
-			navLink.classList.add("js-scroll")
-			navItem.dataset.section = component.title
-			navLink.setAttribute("href", `#${component.title}`)
-			navItem.appendChild(navLink)
-			navList.appendChild(navItem)
-			if (component.id === "styles") {
-				navItem.classList.add("active")
-			}
-		}
-	})
-
 	// Создание эллементов
 
 	const createEl = (tag, classes, text, innerHTML, id) => {
@@ -149,4 +130,23 @@ window.addEventListener("load", function () {
 	function headerHeight() {
 		return (topOffset = document.querySelector(".header").offsetHeight)
 	}
+
+	// Создание навигации
+
+	components.map(component => {
+		if (component.title) {
+			const navItem = document.createElement("li")
+			const navLink = document.createElement("a")
+			navLink.textContent = component.title
+			navItem.classList.add("header__item")
+			navLink.classList.add("js-scroll")
+			navItem.dataset.section = component.title
+			navLink.setAttribute("href", `#${component.title}`)
+			navItem.appendChild(navLink)
+			navList.appendChild(navItem)
+			if (component.id === "styles") {
+				navItem.classList.add("active")
+			}
+		}
+	})
 })
