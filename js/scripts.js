@@ -85,6 +85,25 @@ window.addEventListener("load", function () {
 		})
 	})
 
+	// Создание навигации
+
+	components.map(component => {
+		if (component.title) {
+			const navItem = document.createElement("li")
+			const navLink = document.createElement("a")
+			navLink.textContent = component.title
+			navItem.classList.add("header__item")
+			navLink.classList.add("js-scroll")
+			navItem.dataset.section = component.title
+			navLink.setAttribute("href", `#${component.title}`)
+			navItem.appendChild(navLink)
+			navList.appendChild(navItem)
+			if (component.id === "styles") {
+				navItem.classList.add("active")
+			}
+		}
+	})
+
 	// Плавный скролл до категорий
 
 	document.querySelectorAll(".js-scroll").forEach(link => {
@@ -130,23 +149,4 @@ window.addEventListener("load", function () {
 	function headerHeight() {
 		return (topOffset = document.querySelector(".header").offsetHeight)
 	}
-
-	// Создание навигации
-
-	components.map(component => {
-		if (component.title) {
-			const navItem = document.createElement("li")
-			const navLink = document.createElement("a")
-			navLink.textContent = component.title
-			navItem.classList.add("header__item")
-			navLink.classList.add("js-scroll")
-			navItem.dataset.section = component.title
-			navLink.setAttribute("href", `#${component.title}`)
-			navItem.appendChild(navLink)
-			navList.appendChild(navItem)
-			if (component.id === "styles") {
-				navItem.classList.add("active")
-			}
-		}
-	})
 })
