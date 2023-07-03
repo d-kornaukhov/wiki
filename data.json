@@ -1,7 +1,0 @@
-[
-	{
-		"subtitle": "Table 6 columns",
-		"id": "columns",
-		"code": "<table>\n\t\t<tr>\n\t\t\t\t<td class=\"w15\">content</td>\n\t\t\t\t<td class=\"w1\"></td>\n\t\t\t\t<td class=\"w15\">content</td>\n\t\t\t\t<td class=\"w1\"></td>\n\t\t\t\t<td class=\"w15\">content</td>\n\t\t\t\t<td class=\"w1\"></td>\n\t\t\t\t<td class=\"w15\">content</td>\n\t\t\t\t<td class=\"w1\"></td>\n\t\t\t\t<td class=\"w15\">content</td>\n\t\t\t\t<td class=\"w1\"></td>\n\t\t\t\t<td class=\"w15\">content</td>\n\t\t</tr>\n</table>"
-	}
-]

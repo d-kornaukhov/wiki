@@ -10,7 +10,7 @@
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 20px;
+	padding: 0 20px;
 }
 
 ul {
@@ -22,7 +22,6 @@ ul {
 	top: 0;
 	left: 0;
 	background: rgba(241, 241, 241, 1);
-	margin-bottom: 40px;
 }
 
 .header .container {
@@ -36,33 +35,29 @@ ul {
 	align-items: center;
 }
 
-.header__item {
-	border: 1px solid #000;
-	border-radius: 12px;
-	padding: 10px 20px;
-	cursor: pointer;
-	width: 10%;
-	text-align: center;
-}
-
-.header__item:hover {
-	display: block;
-	border: 1px solid transparent;
-	background: rgba(0, 0, 0, 0.7);
-	transition: 0.4s linear;
-}
-
-.header__item:hover a {
-	color: rgba(255, 255, 255, 0.7);
-	transition: 0.4s linear;
-}
-
-.header__item a {
+.header__link {
 	display: block;
 	width: 100%;
 	line-height: 20px;
 	text-decoration: none;
 	color: #000;
+	border: 1px solid #000;
+	border-radius: 12px;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.header__link:hover {
+	color: rgba(255, 255, 255, 0.7);
+	border: 1px solid transparent;
+	background: rgba(0, 0, 0, 0.7);
+	transition: 0.4s linear;
+}
+
+.active {
+	border: 1px solid transparent;
+	background: #000;
+	color: #fff;
 }
 
 .header__item:not(:last-child) {
@@ -70,13 +65,20 @@ ul {
 }
 
 .code__item {
+	padding: 40px 0;
+}
+
+.code__item-block {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin-bottom: 40px;
 	padding: 30px;
 	border: 1px solid #000;
 	border-radius: 12px;
+}
+
+.code__item-block:not(:last-child) {
+	margin-bottom: 40px;
 }
 
 .code__example {
@@ -103,15 +105,6 @@ textarea {
 	width: 1px;
 }
 
-.code__item--styles {
-	border: none;
-	padding: 0;
-}
-.code__item--styles .btn-clipboard,
-.code__item--styles .code__example {
-	margin: 0;
-}
-
 .code__example--columns td {
 	border: 1px solid #000;
 }
@@ -135,11 +128,19 @@ textarea {
 	border: 1px solid #000;
 }
 
-.active {
-	border: 1px solid transparent;
-	background: #000;
+.code__item--styles .btn-clipboard {
+	margin: 0;
 }
 
-.active a {
-	color: #fff;
+.code__item--styles .code__item-block {
+	border: none;
+	padding: 0;
+}
+
+.code__item-single .code__example {
+	margin: 0;
+}
+
+.code__item--styles .code__example {
+	display: none;
 }

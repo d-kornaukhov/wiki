@@ -1,139 +1,140 @@
-window.addEventListener("load", function () {
-	const codeList = document.querySelector(".code__list")
-	const navList = document.querySelector(".header__list")
+window.addEventListener('load', function () {
+	const codeList = document.querySelector('.code__list')
+	const navList = document.querySelector('.header__list')
 
-	// Создание эллементов
+	// Создание элементов
 
 	const createEl = (tag, classes, text, innerHTML, id) => {
 		const el = document.createElement(tag)
-		if (classes) el.classList.add(...classes.split(" "))
+		if (classes) el.classList.add(...classes.split(' '))
 		if (text) el.textContent = text
 		if (innerHTML) el.innerHTML = innerHTML
-		if (id) el.setAttribute("id", id)
+		if (id) el.setAttribute('id', id)
 		return el
 	}
 
-	const createCodeItem = ({ code, title, subtitle, id }) => {
-		let codeItem = createEl("div", "code__item", null, null, id)
+	const createCodeItem = ({ subtitle, code }) => {
+		const codeItem = createEl('div', 'code__item-block')
+		const codeExample = createEl('div', 'code__example', null, code)
+		const textArea = createEl('textarea', null, code)
+		const subtitleEl = createEl('h4', 'subtitle', subtitle)
+		const button = createEl('button', 'btn-clipboard', 'copy')
 
-		let codeExample = createEl("div", "code__example", code, code)
-		const textArea = createEl("textarea", null, code)
-		const subtitleEl = createEl("h4", "subtitle", subtitle)
-		const titleEl = createEl("h2", "title", title)
-		const button = createEl("button", "btn-clipboard", "copy")
+		const codeItemContainer = createEl('div', 'code__item-container')
 
-		switch (id) {
-			case "columns":
-				codeExample = createEl(
-					"div",
-					"code__example code__example--columns",
-					code,
-					code
-				)
-				break
+		codeItemContainer.appendChild(subtitleEl)
+		codeItemContainer.appendChild(codeExample)
+		codeItemContainer.appendChild(textArea)
+		codeItemContainer.appendChild(button)
 
-			case "styles":
-				codeItem = createEl(
-					"div",
-					"code__item code__item--styles",
-					null,
-					null,
-					id
-				)
-				break
-
-			default:
-				break
-		}
-
-		titleEl.setAttribute("id", id)
-
-		codeItem.appendChild(subtitleEl)
-		codeItem.appendChild(codeExample)
-		codeItem.appendChild(textArea)
-		codeItem.appendChild(button)
-
-		button.addEventListener("click", () => {
+		button.addEventListener('click', () => {
 			const textAreaCopy = textArea.innerHTML
-				.replace(/&lt;/g, "<")
-				.replace(/&gt;/g, ">")
+				.replace(/&lt;/g, '<')
+				.replace(/&gt;/g, '>')
 			clipboard.writeText(textAreaCopy)
 		})
 
-		return { codeItem, titleEl }
+		codeItem.appendChild(codeItemContainer)
+
+		return codeItem
 	}
 
-	components.map(component => {
-		const { codeItem, titleEl } = createCodeItem(component)
-		codeList.appendChild(codeItem)
-		codeItem.parentElement.insertBefore(titleEl, codeItem)
+	const saveComponentsToLocalStorage = () => {
+		localStorage.setItem('components', JSON.stringify(components))
+	}
+
+	components.forEach(component => {
+		const { title, items } = component
+
+		const wrapper = createEl('div', `code__item code__item--${title}`)
+		wrapper.setAttribute('id', title)
+
+		const titleEl = createEl('h2', 'title', title)
+		wrapper.appendChild(titleEl)
+
+		codeList.appendChild(wrapper)
+
+		if (items) {
+			items.forEach(item => {
+				const codeItem = createCodeItem(item)
+				wrapper.appendChild(codeItem)
+			})
+		} else {
+			const codeItem = createCodeItem(component)
+			wrapper.appendChild(codeItem)
+			wrapper.classList.add('code__item-single')
+		}
 	})
 
 	// Изменение текста на кнопке при копировании
 
-	const buttons = document.querySelectorAll(".btn-clipboard")
+	const buttons = document.querySelectorAll('.btn-clipboard')
 
 	buttons.forEach(btn => {
-		btn.addEventListener("click", () => {
+		btn.addEventListener('click', () => {
 			setTimeout(() => {
-				btn.textContent = "copied"
+				btn.textContent = 'copied'
 			}, 500)
 
 			setTimeout(() => {
-				btn.textContent = "copy"
+				btn.textContent = 'copy'
 			}, 1500)
 		})
 	})
 
 	// Создание навигации
 
-	components.map(component => {
+	components.forEach(component => {
 		if (component.title) {
-			const navItem = document.createElement("li")
-			const navLink = document.createElement("a")
+			const navItem = document.createElement('li')
+			const navLink = document.createElement('a')
 			navLink.textContent = component.title
-			navItem.classList.add("header__item")
-			navLink.classList.add("js-scroll")
+			navItem.classList.add('header__item')
+			navLink.classList.add('header__link')
 			navItem.dataset.section = component.title
-			navLink.setAttribute("href", `#${component.title}`)
+			navLink.setAttribute('href', `#${component.title}`)
 			navItem.appendChild(navLink)
 			navList.appendChild(navItem)
-			if (component.id === "styles") {
-				navItem.classList.add("active")
-			}
 		}
 	})
 
 	// Плавный скролл до категорий
 
-	document.querySelectorAll(".js-scroll").forEach(link => {
-		link.addEventListener("click", function (e) {
+	document.querySelectorAll('.header__link').forEach(link => {
+		link.addEventListener('click', function (e) {
 			e.preventDefault()
 
-			const href = this.getAttribute("href").substring(1),
-				scrollTarget = document.getElementById(href),
-				elementPosition = scrollTarget.getBoundingClientRect().top,
-				offsetPosition = elementPosition - headerHeight()
+			const href = this.getAttribute('href').substring(1)
+			const scrollTarget = document.getElementById(href)
+			const elementPosition = scrollTarget.getBoundingClientRect().top
+			const offsetPosition = elementPosition - headerHeight()
 
 			window.scrollBy({
 				top: offsetPosition,
-				behavior: "smooth",
+				behavior: 'smooth',
 			})
 		})
 	})
 
-	// Активный класс навигации при скролле до блока
+	// Функция определения высоты хедера
+
+	const headerHeight = () => {
+		const header = document.querySelector('.header')
+		return header.offsetHeight
+	}
+
+	// Активация навигации при скролле
 
 	const navInit = () => {
-		const navItems = document.querySelectorAll(".header__item")
-		const items = document.querySelectorAll(".code__item")
+		const navLinks = document.querySelectorAll('.header__link')
+		const items = document.querySelectorAll('.code__item')
 		items.forEach(item => {
-			if (window.pageYOffset >= item.offsetTop - headerHeight() - 80) {
-				navItems.forEach(navItem => {
-					if (navItem.dataset.section === item.id) {
-						navItem.classList.add("active")
+			if (window.pageYOffset >= item.offsetTop - headerHeight()) {
+				navLinks.forEach(navLink => {
+					if (navLink.innerHTML === item.id) {
+						navLink.classList.add('active')
 					} else {
-						navItem.classList.remove("active")
+						navLink.classList.remove('active')
 					}
 				})
 			}
@@ -142,11 +143,7 @@ window.addEventListener("load", function () {
 
 	navInit()
 
-	window.addEventListener("scroll", () => {
-		navInit()
-	})
+	saveComponentsToLocalStorage()
 
-	function headerHeight() {
-		return (topOffset = document.querySelector(".header").offsetHeight)
-	}
+	window.addEventListener('scroll', navInit)
 })
