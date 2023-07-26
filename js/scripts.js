@@ -1,5 +1,6 @@
 window.addEventListener('load', function () {
 	const codeList = document.querySelector('.code__list')
+	const header = document.querySelector('.header')
 	const navList = document.querySelector('.header__list')
 
 	// Создание элементов
@@ -145,5 +146,17 @@ window.addEventListener('load', function () {
 
 	saveComponentsToLocalStorage()
 
+	const activeHeader = () => {
+		if (window.scrollY >= 1) {
+			header.classList.add('header-active')
+		} else {
+			header.classList.remove('header-active')
+		}
+	}
+
 	window.addEventListener('scroll', navInit)
+
+	window.addEventListener('scroll', activeHeader)
+
+	console.log(scrollY)
 })
