@@ -14,12 +14,17 @@ window.addEventListener('load', function () {
 		return el
 	}
 
-	const createCodeItem = ({ subtitle, code }) => {
+	const createCodeItem = ({ subtitle, code, example }) => {
 		const codeItem = createEl('div', 'code__item-block')
-		const codeExample = createEl('div', 'code__example', null, code)
+		let codeExample
 		const textArea = createEl('textarea', null, code)
 		const subtitleEl = createEl('h4', 'subtitle', subtitle)
 		const button = createEl('button', 'btn-clipboard', 'copy')
+		if (example) {
+			codeExample = createEl('div', 'code__example', null, example)
+		} else {
+			codeExample = createEl('div', 'code__example', null, code)
+		}
 
 		const codeItemContainer = createEl('div', 'code__item-container')
 
@@ -29,9 +34,7 @@ window.addEventListener('load', function () {
 		codeItemContainer.appendChild(button)
 
 		button.addEventListener('click', () => {
-			const textAreaCopy = textArea.innerHTML
-				.replace(/&lt;/g, '<')
-				.replace(/&gt;/g, '>')
+			const textAreaCopy = textArea.innerHTML.replace(/&lt;/g, '<').replace(/&gt;/g, '>')
 			clipboard.writeText(textAreaCopy)
 		})
 
@@ -157,6 +160,4 @@ window.addEventListener('load', function () {
 	window.addEventListener('scroll', navInit)
 
 	window.addEventListener('scroll', activeHeader)
-
-	console.log(scrollY)
 })

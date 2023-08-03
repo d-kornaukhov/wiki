@@ -7,6 +7,7 @@ const components = [
 			font-family: 'YS Text', Arial, Helvetica, sans-serif;
 			font-size: 18px;
 			line-height: 25px;
+			box-sizing: border-box;
 		}
 		
 		table {
@@ -519,10 +520,6 @@ const components = [
 			width: 10%;
 		}
 		
-		.w270px {
-			width: 270px;
-		}
-		
 		.w16px {
 			width: 16px;
 			max-width: 16px;
@@ -533,6 +530,14 @@ const components = [
 			width: 24px;
 			max-width: 24px;
 			min-width: 24px;
+		}
+		
+		.w270px {
+			width: 270px;
+		}
+		
+		.w0 {
+			width: 0;
 		}
 		/* Addiction you width */
 		
@@ -731,47 +736,52 @@ const components = [
 		}
 		
 		.h12 {
-			height: 12px;
+			height: 12px !important;
 		}
+		
 		.h16 {
-			height: 16px;
+			height: 16px !important;
+		}
+		
+		.h24 {
+			height: 24px !important;
 		}
 		
 		.h32 {
-			height: 32px;
+			height: 32px !important;
 		}
 		.h40 {
-			height: 40px;
+			height: 40px !important;
 		}
 		.h48 {
-			height: 48px;
+			height: 48px !important;
 		}
 		.h64 {
-			height: 64px;
+			height: 64px !important;
 		}
 		.h80 {
-			height: 80px;
+			height: 80px !important;
 		}
 		.h88 {
-			height: 88px;
+			height: 88px !important;
 		}
 		.h96 {
-			height: 96px;
+			height: 96px !important;
 		}
 		.h110 {
-			height: 110px;
+			height: 110px !important;
 		}
 		
 		.h150 {
-			height: 150px;
+			height: 150px !important;
 		}
 		
 		.h336 {
-			height: 336px;
+			height: 336px !important;
 		}
 		
 		.h100p {
-			height: 100%;
+			height: 100% !important;
 		}
 		
 		.bg-center {
@@ -904,212 +914,100 @@ const components = [
 		items: [
 			{
 				subtitle: 'banner 100%',
-				code: `<table class='banner c-text h336' cellspacing="0" cellpadding="0">
-				<tr class='va-top'>
-					<td>
-						<div class='m16'>
-							<h1 class='h-main'>Заголовок</h1>
-						</div>
-					</td>
-				</tr>
-				<tr class='va-bottom h1px'>
-					<td>
-						<p class='p2 m16 w25'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, nulla? Placeat nostrum
-							numquam, necessitatibus veritatis quia quidem atque!</p>
-					</td>
-				</tr>
-			</table>`,
+				code: `<table class="banner c-text h336" cellspacing="0" cellpadding="0">
+			<tr class="va-top">
+				<td>
+					<div class="m16">
+						<h1 class="h-main">Заголовок</h1>
+					</div>
+				</td>
+			</tr>
+			<tr class="va-bottom h1px">
+				<td>
+					<p class="p2 m16">
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, nulla? Placeat nostrum numquam,
+						necessitatibus veritatis quia quidem atque!
+					</p>
+				</td>
+			</tr>
+		</table>`,
 			},
 			{
 				subtitle: 'banner 75%',
-				code: `<table class='c-text' cellspacing="0" cellpadding="0">
-				<tr>
-					<td class='w75'>
-						<table class='banner h336'>
-							<tr class='va-top'>
-								<td>
-									<div class='m16'>
-										<h1 class='h-main'>Заголовок</h1>
-									</div>
-								</td>
-							</tr>
-							<tr class='va-bottom h1px'>
-								<td>
-									<p class='p2 m16 w30'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, nulla? Placeat
-										nostrum
-										numquam, necessitatibus veritatis quia quidem atque!</p>
-								</td>
-							</tr>
-						</table>
-					</td>
-					<td class='w24px'></td>
-					<td class='w25 va-top'>
-						<table class='banner-right h336'>
-							<tr class='va-top'>
-								<td>
-									<div class='m16 mb0 w270px'>
-										<h3>Заголовок</h3>
-										<h4 class='mt16'>Подзаголовок</h4>
-										<ul class='mt16 list-none c-text-64'>
-											<li>
-												<a class='p2 inherit' href='#' target='_blank'>link 1</a>
-											</li>
-											<li class='mt16'>
-												<a class='p2 inherit' href='#' target='_blank'>link 2</a>
-											</li>
-											<li class='mt16'>
-												<a class='p2 inherit' href='#' target='_blank'>link 3</a>
-											</li>
-										</ul>
-									</div>
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>`,
+				code: `<table class="c-text" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="w75">
+					<table class="banner h336">
+						<tr class="va-top">
+							<td>
+								<div class="m16">
+									<h1 class="h-main">Заголовок</h1>
+								</div>
+							</td>
+						</tr>
+						<tr class="va-bottom h1px">
+							<td>
+								<p class="p2 m16">
+									Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, nulla? Placeat nostrum numquam,
+									necessitatibus veritatis quia quidem atque!
+								</p>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td class="w24px"></td>
+				<td class="w25 va-top">
+					<table class="banner-right h336">
+						<tr class="va-top">
+							<td>
+								<div class="m16 mb0 w270px">
+									<h3>Заголовок</h3>
+									<h4 class="mt16">Подзаголовок</h4>
+									<ul class="mt16 list-none c-text-64">
+										<li>
+											<a class="p2 inherit" href="#" target="_blank">link 1</a>
+										</li>
+										<li class="mt16">
+											<a class="p2 inherit" href="#" target="_blank">link 2</a>
+										</li>
+										<li class="mt16">
+											<a class="p2 inherit" href="#" target="_blank">link 3</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>`,
 			},
 			{
 				subtitle: 'banner medium',
-				code: `<table class='banner h150 c-text' cellspacing="0" cellpadding="0">
-				<tr>
-					<td class="va-middle">
-						<div class='m16'>
-							<h2>Заголовок</h2>
-						</div>
-					</td>
-				</tr>
-			</table>`,
+				code: `<table class="banner h150 c-text" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="va-middle">
+					<div class="m16">
+						<h2>Заголовок</h2>
+					</div>
+				</td>
+			</tr>
+		</table>`,
 			},
 			{
 				subtitle: 'banner + button',
-				code: `	<table class='banner h80' cellspacing="0" cellpadding="0">
-				<tr>
-					<td class='va-middle'>
-						<h3 class='ml16 c-text'>Заголовок</h3>
-					</td>
-					<td class='va-middle'>
-						<a class='fright mr16 btn' href='#' target='_blank'>Кнопка</a>
-					</td>
-				</tr>
-			</table>`,
-			},
-		],
-	},
-	{
-		title: 'navigation',
-		items: [
-			{
-				subtitle: 'navigation tabs',
-				code: `<table cellspacing="0" cellpadding="0">
-				<tr>
-					<td class='w24'> <a class=' inherit underline-none' href='#'>
-							<div class='nav-item nav-item--active'>
-								<p class='p2 bold'>nav 1</p>
-							</div>
-						</a>
-					</td>
-					<td class="w24px"></td>
-					<td class='w24'>
-						<a class='inherit underline-none' href='#'>
-							<div class='nav-item'>
-								<p class='p2 bold'>nav 2</p>
-							</div>
-						</a>
-					</td>
-					<td class="w24px"></td>
-					<td class='w24'>
-						<a class='inherit underline-none' href='#'>
-							<div class='nav-item'>
-								<p class='p2 bold'>nav 3</p>
-							</div>
-						</a>
-					</td>
-					<td class="w24px"></td>
-					<td class='w24'>
-						<a class='inherit underline-none' href='#'>
-							<div class='nav-item'>
-								<p class='p2 bold'>nav 4</p>
-							</div>
-						</a>
-					</td>
-				</tr>
-			</table>`,
-			},
-			{
-				subtitle: 'navigation banner',
-				code: `<table class='c-text' cellspacing="0" cellpadding="0">
-				<tr>
-					<td class='w50'>
-						<table class='banner h336'>
-							<tr class='va-top'>
-								<td>
-									<div class='m16'>
-										<h1 class='h-main'>Заголовок</h1>
-									</div>
-								</td>
-							</tr>
-							<tr class='va-bottom h1px'>
-								<td>
-									<p class='p2 ml16 mb16'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-								</td>
-							</tr>
-						</table>
-					</td>
-					<td class='w24px'></td>
-					<td class='w50 va-top'>
-						<table class='banner-right h336' cellspacing="0" cellpadding="0">
-							<tr class='va-top'>
-								<td>
-									<table>
-										<tr>
-											<td>
-												<h4 class='mt16 ml16 c-text'>Заголовок</h4>
-											</td>
-										</tr>
-										<tr>
-											<td class='w50 va-top'>
-												<div class='ml16 mt16 c-text'>
-													<p class='p2 mt16'>Подзаголовок</p>
-													<ul class='mt16 list-none c-text-64'>
-														<li>
-															<a class='p2 inherit' href='#' target='_blank'>link 1</a>
-														</li>
-														<li class='mt8'>
-															<a class='p2 inherit' href='#' target='_blank'>link 2</a>
-														</li>
-														<li class='mt8'>
-															<a class='p2 inherit' href='#' target='_blank'>link 3</a>
-														</li>
-													</ul>
-												</div>
-											</td>
-											<td class='w24px'></td>
-											<td class='w50 va-top'>
-												<div class='mt16 c-text'>
-													<p class='p2 mt16'>Подзаголовок</p>
-													<ul class='mt16 list-none c-text-64'>
-														<li>
-															<a class='p2 inherit' href='#' target='_blank'>link 1</a>
-														</li>
-														<li class='mt8'>
-															<a class='p2 inherit' href='#' target='_blank'>link 2</a>
-														</li>
-														<li class='mt8'>
-															<a class='p2 inherit' href='#' target='_blank'>link 3</a>
-														</li>
-													</ul>
-												</div>
-											</td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>
-				`,
+				code: `
+		<table class="banner h80" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="va-middle">
+					<h3 class="ml16 c-text">Заголовок</h3>
+				</td>
+				<td class="va-middle">
+					<a class="fright mr16 btn" href="#" target="_blank">Кнопка</a>
+				</td>
+			</tr>
+		</table>
+		`,
 			},
 		],
 	},
@@ -1188,7 +1086,131 @@ const components = [
 			},
 		],
 	},
-
+	{
+		title: 'navigation',
+		items: [
+			{
+				subtitle: 'navigation tabs',
+				example: `
+				<table cellspacing="0" cellpadding="0">
+				<tr>
+					<td class="w24">
+						<a class="inherit underline-none" href="#">
+							<div class="nav-item nav-item--active">
+								<p class="p2 bold">nav 1</p>
+							</div>
+						</a>
+					</td>
+					<td class="w24px"></td>
+					<td class="w24">
+						<a class="inherit underline-none" href="#">
+							<div class="nav-item">
+								<p class="p2 bold">nav 2</p>
+							</div>
+						</a>
+					</td>
+					<td class="w24px"></td>
+					<td class="w24">
+						<a class="inherit underline-none" href="#">
+							<div class="nav-item">
+								<p class="p2 bold">nav 3</p>
+							</div>
+						</a>
+					</td>
+					<td class="w24px"></td>
+					<td class="w24">
+						<a class="inherit underline-none" href="#">
+							<div class="nav-item">
+								<p class="p2 bold">nav 4</p>
+							</div>
+						</a>
+					</td>
+				</tr>
+			</table>
+				`,
+				code: `	<a class=' inherit underline-none' href='#'>
+				<div class='nav-item nav-item--active'>
+					<p class='p2 bold'>nav 1</p>
+				</div>
+			</a>`,
+			},
+			{
+				subtitle: 'navigation banner',
+				code: `<table class='c-text' cellspacing="0" cellpadding="0">
+				<tr>
+					<td class='w50'>
+						<table class='banner h336'>
+							<tr class='va-top'>
+								<td>
+									<div class='m16'>
+										<h1 class='h-main'>Заголовок</h1>
+									</div>
+								</td>
+							</tr>
+							<tr class='va-bottom h1px'>
+								<td>
+									<p class='p2 ml16 mb16'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td class='w24px'></td>
+					<td class='w50 va-top'>
+						<table class='banner-right h336' cellspacing="0" cellpadding="0">
+							<tr class='va-top'>
+								<td>
+									<table>
+										<tr>
+											<td>
+												<h4 class='mt16 ml16 c-text'>Заголовок</h4>
+											</td>
+										</tr>
+										<tr>
+											<td class='w50 va-top'>
+												<div class='ml16 mt16 c-text'>
+													<p class='p2 mt16'>Подзаголовок</p>
+													<ul class='mt16 list-none c-text-64'>
+														<li>
+															<a class='p2 inherit' href='#' target='_blank'>link 1</a>
+														</li>
+														<li class='mt8'>
+															<a class='p2 inherit' href='#' target='_blank'>link 2</a>
+														</li>
+														<li class='mt8'>
+															<a class='p2 inherit' href='#' target='_blank'>link 3</a>
+														</li>
+													</ul>
+												</div>
+											</td>
+											<td class='w24px'></td>
+											<td class='w50 va-top'>
+												<div class='mt16 c-text'>
+													<p class='p2 mt16'>Подзаголовок</p>
+													<ul class='mt16 list-none c-text-64'>
+														<li>
+															<a class='p2 inherit' href='#' target='_blank'>link 1</a>
+														</li>
+														<li class='mt8'>
+															<a class='p2 inherit' href='#' target='_blank'>link 2</a>
+														</li>
+														<li class='mt8'>
+															<a class='p2 inherit' href='#' target='_blank'>link 3</a>
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+				`,
+			},
+		],
+	},
 	{
 		title: 'cut',
 		items: [
@@ -1293,6 +1315,218 @@ const components = [
 				</div>
 			</details>
 			<div class="hr mt24"></div>`,
+			},
+		],
+	},
+	{
+		title: 'cards',
+		items: [
+			{
+				subtitle: 'team card',
+				example: `<table cellspacing="0" cellpadding="0">
+				<tr>
+					<td class="w33">
+						<table class="va-top" cellspacing="0" cellpadding="0">
+							<tr>
+								<td class='w0'>
+									<img class="fleft radius50 bg-gray" src="" width="96" height="96" />
+								</td>
+								<td class='w16px'></td>
+								<td class="va-middle">
+									<div>
+										<h3>Имя</h3>
+										<p class="p1 c-text-64 mt8">Должность</p>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td class="w24px"></td>
+					<td class="w33">
+						<table class="va-top" cellspacing="0" cellpadding="0">
+							<tr>
+								<td class='w0'>
+									<img class="fleft radius50 bg-gray" src="" width="96" height="96" />
+								</td>
+								<td class='w16px'></td>
+								<td class="va-middle">
+									<div>
+										<h3>Имя</h3>
+										<p class="p1 c-text-64 mt8">Должность</p>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td class="w24px"></td>
+					<td class="w33">
+						<table class="va-top" cellspacing="0" cellpadding="0">
+							<tr>
+								<td class='w0'>
+									<img class="fleft radius50 bg-gray" src="" width="96" height="96" />
+								</td>
+								<td class='w16px'></td>
+								<td class="va-middle">
+									<div>
+										<h3>Имя</h3>
+										<p class="p1 c-text-64 mt8">Должность</p>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>`,
+				code: `
+			<table class="va-top" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class='w0'>
+					<img class="fleft radius50 bg-gray" src="" width="96" height="96" />
+				</td>
+				<td class='w16px'></td>
+				<td class="va-middle">
+					<div>
+						<h3>Имя</h3>
+						<p class="p1 c-text-64 mt8">Должность</p>
+					</div>
+				</td>
+			</tr>
+		</table>
+			`,
+			},
+			{
+				subtitle: 'card text + img',
+				example: `
+					<table cellspacing="0" cellpadding="0">
+					<tr>
+						<td class="w50 va-top bg-gray radius16">
+							<div class="pad16">
+								<table style="height: 80px" cellspacing="0" cellpadding="0">
+									<tr class="va-top">
+										<td>
+											<p class="fleft">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+										</td>
+										<td class="va-bottom">
+											<img class="fright bg-white radius50 ml16" src="" width="40" height="40" />
+										</td>
+									</tr>
+								</table>
+							</div>
+						</td>
+						<td class="w24px"></td>
+						<td class="w50 va-top bg-gray radius16">
+							<div class="pad16">
+								<table style="height: 80px" cellspacing="0" cellpadding="0">
+									<tr class="va-top">
+										<td>
+											<p class="fleft">
+												Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
+												adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+											</p>
+										</td>
+										<td class="va-bottom">
+											<img class="fright bg-white radius50 ml16" src="" width="40" height="40" />
+										</td>
+									</tr>
+								</table>
+							</div>
+						</td>
+					</tr>
+				</table>`,
+				code: `
+					<div class="pad16">
+					<table style="height: 80px" cellspacing="0" cellpadding="0">
+						<tr class="va-top">
+							<td>
+								<p class="fleft">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								</p>
+							</td>
+							<td class="va-bottom">
+								<img class="fright bg-white radius50 ml16" src="" width="40" height="40" />
+							</td>
+						</tr>
+					</table>
+				</div>
+			`,
+			},
+			{
+				subtitle: 'card text + img',
+				example: `
+				<table cellspacing="0" cellpadding="0">
+				<tr>
+					<td class="w50 va-top bg-gray radius16">
+						<div class="pad16">
+							<table style="height: 200px" cellspacing="0" cellpadding="0">
+								<tr class="va-top">
+									<td>
+										<h4 class="fleft">Заголовок</h4>
+									</td>
+									<td>
+										<img class="fright bg-white radius50 ml16" src="" width="40" height="40" />
+									</td>
+								</tr>
+								<tr class="va-bottom">
+									<td class="va-bottom">
+										<p>
+											Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius illo excepturi soluta deserunt,
+											corrupti voluptatum quia, veritatis delectus vero consectetur et quibusdam dolores aspernatur!
+											Vitae, unde. Repudiandae amet fugiat exercitationem.
+										</p>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+					<td class="w24px"></td>
+					<td class="w50 va-top bg-gray radius16">
+						<div class="pad16">
+							<table style="height: 200px" cellspacing="0" cellpadding="0">
+								<tr class="va-top">
+									<td>
+										<h4 class="fleft">Заголовок</h4>
+									</td>
+									<td>
+										<img class="fright bg-white radius50 ml16" src="" width="40" height="40" />
+									</td>
+								</tr>
+								<tr class="va-bottom">
+									<td class="va-bottom">
+										<p>
+											Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius illo excepturi soluta deserunt,
+											corrupti voluptatum quia, veritatis delectus vero consectetur et quibusdam dolores aspernatur!
+											Vitae, unde. Repudiandae amet fugiat exercitationem. corrupti voluptatum quia, veritatis delectus
+										</p>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>`,
+				code: `
+				<div class="pad16">
+				<table style="height: 200px" cellspacing="0" cellpadding="0">
+					<tr class="va-top">
+						<td>
+							<h4 class="fleft">Заголовок</h4>
+						</td>
+						<td>
+							<img class="fright bg-white radius50 ml16" src="" width="40" height="40" />
+						</td>
+					</tr>
+					<tr class="va-bottom">
+						<td class="va-bottom">
+							<p>
+								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius illo excepturi soluta deserunt,
+								corrupti voluptatum quia, veritatis delectus vero consectetur et quibusdam dolores aspernatur!
+								Vitae, unde. Repudiandae amet fugiat exercitationem.
+							</p>
+						</td>
+					</tr>
+				</table>
+			</div>
+			`,
 			},
 		],
 	},

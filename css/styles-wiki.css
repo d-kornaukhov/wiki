@@ -4,6 +4,7 @@
 	font-family: 'YS Text', Arial, Helvetica, sans-serif;
 	font-size: 18px;
 	line-height: 25px;
+	box-sizing: border-box;
 }
 
 table {
@@ -516,10 +517,6 @@ a {
 	width: 10%;
 }
 
-.w270px {
-	width: 270px;
-}
-
 .w16px {
 	width: 16px;
 	max-width: 16px;
@@ -530,6 +527,14 @@ a {
 	width: 24px;
 	max-width: 24px;
 	min-width: 24px;
+}
+
+.w270px {
+	width: 270px;
+}
+
+.w0 {
+	width: 0;
 }
 /* Addiction you width */
 
@@ -728,47 +733,52 @@ details summary::-webkit-details-marker /* Safari */ {
 }
 
 .h12 {
-	height: 12px;
+	height: 12px !important;
 }
+
 .h16 {
-	height: 16px;
+	height: 16px !important;
+}
+
+.h24 {
+	height: 24px !important;
 }
 
 .h32 {
-	height: 32px;
+	height: 32px !important;
 }
 .h40 {
-	height: 40px;
+	height: 40px !important;
 }
 .h48 {
-	height: 48px;
+	height: 48px !important;
 }
 .h64 {
-	height: 64px;
+	height: 64px !important;
 }
 .h80 {
-	height: 80px;
+	height: 80px !important;
 }
 .h88 {
-	height: 88px;
+	height: 88px !important;
 }
 .h96 {
-	height: 96px;
+	height: 96px !important;
 }
 .h110 {
-	height: 110px;
+	height: 110px !important;
 }
 
 .h150 {
-	height: 150px;
+	height: 150px !important;
 }
 
 .h336 {
-	height: 336px;
+	height: 336px !important;
 }
 
 .h100p {
-	height: 100%;
+	height: 100% !important;
 }
 
 .bg-center {
