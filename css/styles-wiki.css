@@ -609,69 +609,38 @@ a {
 	background-color: #efe7fc;
 }
 
-/* Arrow */
-.arrow-l {
-	border-left: 1px solid rgba(0, 0, 0, 0.7);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.7);
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	width: 12px;
-	height: 12px;
-	margin-right: 3px;
+.wiki-cut__summary {
+	color: inherit;
+	margin: 0;
 }
 
-.arrow-l-h1 {
-	border-left: 1px solid rgba(0, 0, 0, 0.7);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.7);
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	width: 12px;
-	height: 12px;
-	margin-right: 3px;
-	margin-top: 13px;
+.woof-icon_type_awesome-angle-down,
+.woof-icon_type_awesome-angle-up {
+	width: 16px;
+	height: 32px;
+	color: inherit;
+	opacity: 0.7;
 }
 
-.arrow-l-h2 {
-	border-left: 1px solid rgba(0, 0, 0, 0.7);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.7);
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
+.arrow-p {
 	width: 12px;
-	height: 12px;
-	margin-right: 3px;
-	margin-top: 9px;
+	height: 24px;
 }
 
-.arrow-l-h3 {
-	border-left: 1px solid rgba(0, 0, 0, 0.7);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.7);
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	width: 12px;
-	height: 12px;
-	margin-right: 3px;
+.arrow-h4 {
+	width: 14px;
+	height: 28px;
+}
+
+.arrow-h3 {
+	width: 16px;
+	height: 32px;
+}
+
+.arrow-h2 {
+	width: 16px;
+	height: 32px;
 	margin-top: 6px;
-}
-
-.arrow-l-h4 {
-	border-left: 1px solid rgba(0, 0, 0, 0.7);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.7);
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	width: 12px;
-	height: 12px;
-	margin-right: 3px;
-	margin-top: 3px;
-}
-
-/* как отступы с загаловками в стилях */
-.arrow-s {
-	border-left: 1px solid rgba(0, 0, 0, 0.7);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.7);
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	width: 8px;
-	height: 8px;
 }
 
 /* Dropdown */
@@ -696,9 +665,6 @@ details summary::-webkit-details-marker /* Safari */ {
 	margin-top: 24px;
 }
 
-.wiki-cut__summary {
-	color: inherit;
-}
 .hr {
 	margin: 24px 0;
 	height: 1px;

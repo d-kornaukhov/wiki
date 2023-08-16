@@ -612,69 +612,38 @@ const components = [
 			background-color: #efe7fc;
 		}
 		
-		/* Arrow */
-		.arrow-l {
-			border-left: 1px solid rgba(0, 0, 0, 0.7);
-			border-bottom: 1px solid rgba(0, 0, 0, 0.7);
-			transform: rotate(-45deg);
-			-webkit-transform: rotate(-45deg);
-			width: 12px;
-			height: 12px;
-			margin-right: 3px;
+		.wiki-cut__summary {
+			color: inherit;
+			margin: 0;
 		}
 		
-		.arrow-l-h1 {
-			border-left: 1px solid rgba(0, 0, 0, 0.7);
-			border-bottom: 1px solid rgba(0, 0, 0, 0.7);
-			transform: rotate(-45deg);
-			-webkit-transform: rotate(-45deg);
-			width: 12px;
-			height: 12px;
-			margin-right: 3px;
-			margin-top: 13px;
+		.woof-icon_type_awesome-angle-down,
+		.woof-icon_type_awesome-angle-up {
+			width: 16px;
+			height: 32px;
+			color: inherit;
+			opacity: 0.7;
 		}
 		
-		.arrow-l-h2 {
-			border-left: 1px solid rgba(0, 0, 0, 0.7);
-			border-bottom: 1px solid rgba(0, 0, 0, 0.7);
-			transform: rotate(-45deg);
-			-webkit-transform: rotate(-45deg);
-			width: 12px;
-			height: 12px;
-			margin-right: 3px;
-			margin-top: 9px;
+		.arrow-p {
+			width: 12px !important;
+			height: 24px !important;
 		}
 		
-		.arrow-l-h3 {
-			border-left: 1px solid rgba(0, 0, 0, 0.7);
-			border-bottom: 1px solid rgba(0, 0, 0, 0.7);
-			transform: rotate(-45deg);
-			-webkit-transform: rotate(-45deg);
-			width: 12px;
-			height: 12px;
-			margin-right: 3px;
+		.arrow-h4 {
+			width: 14px !important;
+			height: 28px !important;
+		}
+		
+		.arrow-h3 {
+			width: 16px !important;
+			height: 32px !important;
+		}
+		
+		.arrow-h2 {
+			width: 16px !important;
+			height: 32px !important;
 			margin-top: 6px;
-		}
-		
-		.arrow-l-h4 {
-			border-left: 1px solid rgba(0, 0, 0, 0.7);
-			border-bottom: 1px solid rgba(0, 0, 0, 0.7);
-			transform: rotate(-45deg);
-			-webkit-transform: rotate(-45deg);
-			width: 12px;
-			height: 12px;
-			margin-right: 3px;
-			margin-top: 3px;
-		}
-		
-		/* как отступы с загаловками в стилях */
-		.arrow-s {
-			border-left: 1px solid rgba(0, 0, 0, 0.7);
-			border-bottom: 1px solid rgba(0, 0, 0, 0.7);
-			transform: rotate(-45deg);
-			-webkit-transform: rotate(-45deg);
-			width: 8px;
-			height: 8px;
 		}
 		
 		/* Dropdown */
@@ -699,9 +668,6 @@ const components = [
 			margin-top: 24px;
 		}
 		
-		.wiki-cut__summary {
-			color: inherit;
-		}
 		.hr {
 			margin: 24px 0;
 			height: 1px;
@@ -906,7 +872,7 @@ const components = [
 			text-decoration: none;
 			font-weight: 700;
 			cursor: pointer;
-		}
+		}			
 		`,
 	},
 	{
@@ -1215,25 +1181,8 @@ const components = [
 		title: 'cut',
 		items: [
 			{
-				subtitle: 'cut H1 100% width',
-				code: `	<details class="w100 mt24">
-				<summary class="wiki-cut__summary">
-					<h1 class="fleft">Details</h1>
-					<div class="fright arrow-l-h1"></div>
-					<div class="clear"></div>
-				</summary>
-	
-				<!-- Добавить свой идентификатор, что бы пользователь проваливался сюда -->
-				<div id="1" name="1"></div>
-				<div class="details-content">
-					content
-				</div>
-			</details>
-			<div class="hr mt24"></div>`,
-			},
-			{
-				subtitle: 'Cut H2 100% width',
-				code: `<details class="w100 mt24">
+				subtitle: 'Cut H2',
+				example: `<details class="w100 mt24">
 				<summary class="wiki-cut__summary">
 					<h2 class="fleft">Details</h2>
 					<div class="fright arrow-l-h2"></div>
@@ -1247,10 +1196,26 @@ const components = [
 				</div>
 			</details>
 			<div class="hr mt24"></div>`,
+				code: `<details class="wiki-cut mt64 w100">
+				<summary class="wiki-cut__summary">
+					<h2 class="fleft">Публикация внутри ссылка</h2>
+					<div class="fright ml16">
+						<div class="woof-icon_type_awesome-angle-up arrow-h2"></div>
+						<div class="woof-icon_type_awesome-angle-down arrow-h2"></div>
+					</div>
+					<div class="clear"></div>
+				</summary>
+				<!-- Добавить свой идентификатор, что бы пользователь проваливался сюда -->
+				<div id="1" name="1"></div>
+				<div class="details-content">
+					content
+				</div>
+			</details>
+			<div class="hr mt24"></div>`,
 			},
 			{
-				subtitle: 'Cut H3 100% width',
-				code: `<details class="w100 mt24">
+				subtitle: 'Cut H3',
+				example: `<details class="w100 mt24">
 				<summary class="wiki-cut__summary">
 					<h3 class="fleft">Details</h3>
 					<div class="fright arrow-l-h3"></div>
@@ -1264,10 +1229,26 @@ const components = [
 				</div>
 			</details>
 			<div class="hr mt24"></div>`,
+				code: `<details class="wiki-cut mt64 w100">
+				<summary class="wiki-cut__summary">
+					<h3 class="fleft">Details H3</h3>
+					<div class="fright ml16">
+						<div class="woof-icon_type_awesome-angle-up arrow-h3"></div>
+						<div class="woof-icon_type_awesome-angle-down arrow-h3"></div>
+					</div>
+					<div class="clear"></div>
+				</summary>
+				<!-- Добавить свой идентификатор, что бы пользователь проваливался сюда -->
+				<div id="1" name="1"></div>
+				<div class="details-content">
+					content
+				</div>
+			</details>
+			<div class="hr mt24"></div>`,
 			},
 			{
-				subtitle: 'Cut H4 100% width',
-				code: `<details class="w100 mt24">
+				subtitle: 'Cut H4',
+				example: `<details class="w100 mt24">
 				<summary class="wiki-cut__summary">
 					<h4 class="fleft">Details</h4>
 					<div class="fright arrow-l-h4"></div>
@@ -1281,10 +1262,26 @@ const components = [
 				</div>
 			</details>
 			<div class="hr mt24"></div>`,
+				code: `<details class="wiki-cut mt64 w100">
+				<summary class="wiki-cut__summary">
+					<h4 class="fleft">Details H4</h4>
+					<div class="fright ml16">
+						<div class="woof-icon_type_awesome-angle-up arrow-h4"></div>
+						<div class="woof-icon_type_awesome-angle-down arrow-h4"></div>
+					</div>
+					<div class="clear"></div>
+				</summary>
+				<!-- Добавить свой идентификатор, что бы пользователь проваливался сюда -->
+				<div id="1" name="1"></div>
+				<div class="details-content">
+					content
+				</div>
+			</details>
+			<div class="hr mt24"></div>`,
 			},
 			{
-				subtitle: 'Cut paragraph 100% width',
-				code: `<details class="w100 mt24">
+				subtitle: 'Cut paragraph',
+				example: `<details class="w100 mt24">
 				<summary class="wiki-cut__summary">
 					<p class="p1-bold fleft">Details</p>
 					<div class="fright arrow-l"></div>
@@ -1298,16 +1295,15 @@ const components = [
 				</div>
 			</details>
 			<div class="hr mt24"></div>`,
-			},
-			{
-				subtitle: 'H4 current width',
-				code: `<details class="mt24">
+				code: `<details class="wiki-cut mt64 w100">
 				<summary class="wiki-cut__summary">
-					<h4 class="fleft mr16">details</h4>
-					<div class="fleft arrow-l-h4"></div>
+					<p class="fleft">Details Paragraph</p>
+					<div class="fright ml16">
+						<div class="woof-icon_type_awesome-angle-up arrow-p"></div>
+						<div class="woof-icon_type_awesome-angle-down arrow-p"></div>
+					</div>
 					<div class="clear"></div>
 				</summary>
-	
 				<!-- Добавить свой идентификатор, что бы пользователь проваливался сюда -->
 				<div id="1" name="1"></div>
 				<div class="details-content">

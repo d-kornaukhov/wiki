@@ -159,3 +159,68 @@ textarea {
 .code__item--styles .code__example {
 	display: none;
 }
+
+/* Arrow */
+.arrow-l {
+	border-left: 1px solid rgba(0, 0, 0, 0.7);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	width: 12px;
+	height: 12px;
+	margin-right: 3px;
+}
+
+.arrow-l-h1 {
+	border-left: 1px solid rgba(0, 0, 0, 0.7);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	width: 12px;
+	height: 12px;
+	margin-right: 3px;
+	margin-top: 13px;
+}
+
+.arrow-l-h2 {
+	border-left: 1px solid rgba(0, 0, 0, 0.7);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	width: 12px;
+	height: 12px;
+	margin-right: 3px;
+	margin-top: 9px;
+}
+
+.arrow-l-h3 {
+	border-left: 1px solid rgba(0, 0, 0, 0.7);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	width: 12px;
+	height: 12px;
+	margin-right: 3px;
+	margin-top: 6px;
+}
+
+.arrow-l-h4 {
+	border-left: 1px solid rgba(0, 0, 0, 0.7);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	width: 12px;
+	height: 12px;
+	margin-right: 3px;
+	margin-top: 3px;
+}
+
+/* как отступы с загаловками в стилях */
+.arrow-s {
+	border-left: 1px solid rgba(0, 0, 0, 0.7);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	width: 8px;
+	height: 8px;
+}
